@@ -227,12 +227,12 @@ sample : $(SAMPLE)
 
 .PHONY : diff
 diff : $(OUTFILE) $(SAMPLE)
-> $(DIFF) $^
+> $(call verbose) $(DIFF) $^
 
 
 .PHONY : pipediff
 pipediff : $(EXEC) $(SAMPLE)
-> $(EXEC) | $(DIFF) - $(SAMPLE)
+> $(call verbose) $(EXEC) | $(DIFF) - $(SAMPLE)
 
 
 .PHONY : verbose
