@@ -1,11 +1,13 @@
 ./
 ./doc
-./doc/sample.out
+./doc/sample-out.txt
 ./inc
 ./inc/STUB.h
 ./inc/STUB.hpp
+./LICENSE
 ./makefile
 ./MANIFEST
+./README.md
 ./src
 ./src/STUB.c
 ./src/STUB.cpp

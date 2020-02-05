@@ -267,7 +267,7 @@ endif
 
 .PHONY : check
 check :
-> @set -e ; find ./ -print | $(DIFF) - ./MANIFEST
+> @set -e ; find ./ -not -path '*/\.*' -print | $(DIFF) - ./MANIFEST
 
 
 .PHONY : cleaner
@@ -279,7 +279,7 @@ cleaner : clean
 
 .PHONY : newmanifest
 newmanifest :
-> @set -e ; find ./ -fprint ./MANIFEST
+> @set -e ; find ./ -not -path '*/\.*' -fprint ./MANIFEST
 > @set -e ; echo "  <NFO> (INTERNAL) Generated new MANIFEST file for module \"$(THIS_MODULE)\"."
 
 .PHONY : newsample
