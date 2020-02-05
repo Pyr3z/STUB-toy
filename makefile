@@ -111,7 +111,7 @@ PREPROC  += $(addprefix -D,$(DEFS)) $(addprefix -U,$(UNDEFS))
 # EXTENSIONS
 .SRC     := $(strip $(suffix $(firstword $(SRCS))))
 .EXE     := .exe
-.OUT     := .out
+.OUT     := .txt
 .OBJ     := .o
 
 # DIRECTORIES
@@ -126,7 +126,7 @@ LINKLIBS +=
 # EXECUTABLE & OUTPUT
 EXEC     := $(BINDIR)/$(THIS_MODULE)$(.EXE)
 OUTFILE  := $(OUTDIR)/$(THIS_MODULE)$(.OUT)
-SAMPLE   := ./doc/sample.out
+SAMPLE   := ./doc/sample-out.txt
 
 # COMPILER FLAGS
 STD      := -std=c++11
