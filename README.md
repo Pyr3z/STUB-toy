@@ -1,2 +1,2 @@
 # STUB
- STUB project template for "toy" programs.
+Levi Perez's project template for "toy" programs.
