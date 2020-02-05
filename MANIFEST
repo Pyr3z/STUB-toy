@@ -1,0 +1,12 @@
+./
+./doc
+./doc/sample.out
+./inc
+./inc/STUB.h
+./inc/STUB.hpp
+./makefile
+./MANIFEST
+./src
+./src/STUB.c
+./src/STUB.cpp
+./UNLICENSE
