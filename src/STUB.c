@@ -24,9 +24,11 @@
     \todo     Un-STUB-ify this file.
 ******************************************************************************/
 
-// #pragma GCC diagnostic push
+/*
+#pragma GCC diagnostic push
+*/
 
-#include <stdio.h> //!< printf
+#include <stdio.h> /*!< printf */
 
 
 
@@ -37,4 +39,6 @@ int main(int argc, const char* const argv[])
   return 0;
 }
 
-// #pragma GCC diagnostic pop
+/*
+#pragma GCC diagnostic pop
+*/
