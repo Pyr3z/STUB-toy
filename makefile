@@ -115,6 +115,9 @@ endif
 .OUT     := .txt
 
 
+LANG     := $(if $(subst .c,,$(.SRC)),c++,c)
+
+
 # DIRECTORIES (Again, this is provided precisely so it can be changed by you to fit you.)
 ROOTDIR  := .
 SRCDIR   := $(ROOTDIR)/src
@@ -224,7 +227,7 @@ LINKLIBS +=
 
 
 # COMPILER FLAGS
-STD      := -std=c++11
+STD      := -std=$(LANG)11
 
 WARN     += all extra
 WERROR   := -Werror
