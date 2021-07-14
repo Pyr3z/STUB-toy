@@ -180,10 +180,6 @@ VERBOSE    = $(if $(findstring verbose,$(ARG)),,@set -e ;)
 IVERBOSE   = $(if $(findstring verbose,$(ARG)),@set -e ;,)
 
 
-# READ META-FILES
-override FILTHIES := $(sort $(subst $(NEWLINE), ,$(file <$(FILTH))))
-
-
 # GENERIC FUNCTIONS
 stemname   = $(strip $(basename $(notdir $1)))
 
@@ -212,6 +208,10 @@ src2obj    = $(CC) $(CFLAGS) $(NOLINK) $(INC) $1 -o $2
 obj2exe    = $(CC) $(CFLAGS) $1 $(LINK) -o $2
 
 src2exe    = $(CC) $(CFLAGS) $(INC) $1 $(LINK) -o $2
+
+
+# READ META-FILES
+override FILTHIES := $(if $(call anyexists,$(FILTH)),$(sort $(subst $(NEWLINE), ,$(file < $(FILTH)))),)
 
 
 # DETAILED CONFIGURATION ######################################################
@@ -301,7 +301,7 @@ help :
   echo "  <NFO>   - verbose  (forces recompile, all flags are echo'd)" ; \
   echo "  <NFO>   - chill    (forces recompile with -Werror disabled)" ; \
   echo "  <NFO>   - diffman  (diffs the filesystem against \"$(MANIFEST)\")" ; \
-  echo "  <NFO>   - clean" ; \
+  echo "  <NFO>   - clean    (removes files make previously created)" ; \
   echo "  <NFO>   - cleaner  (runs clean plus removes empty files/directories)"
 
 
